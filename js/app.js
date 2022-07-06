@@ -1,4 +1,4 @@
-class tamagotchi = {
+class Tamagotchi = {
     constructor(name, hunger, sleepiness, boredom, age){
         this.name = name
         this.hunger = hunger
@@ -12,3 +12,4 @@ class tamagotchi = {
     }
 }
 
+const babyYoda = new Tamagotchi ("Grogu", 1, 1, 1, 0)
