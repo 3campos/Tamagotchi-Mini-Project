@@ -12,6 +12,13 @@ function startSleepinessNumerator() {
     
     startSleepinessNumerator()
 
+function startBoredomNumerator() {
+    let getBoredomNumerator = document.getElementById('boredomNumerator')
+    getBoredomNumerator.innerText = `Boredom = ${0}`
+    }
+    
+    startBoredomNumerator()
+
 class Tamagotchi {
     constructor(name, hunger, sleepiness, boredom, age){
         this.name = name
