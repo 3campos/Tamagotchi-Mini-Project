@@ -29,15 +29,38 @@ function feedGrogu () {
 }
 
 //SLEEP FUNCTIONS
+//SETUP FOR QUESTION BELOW
+// let getSleepinessNumerator = document.getElementById('sleepinessNumerator')
+// // let changeBackgroundImage = document.getElementById('#background')
+//         //I write this variable to change the background to represent the lights turning off.
+//         //I grab the background by its Id.
+
+// function startSleepinessNumerator() {
+//     getSleepinessNumerator.innerText = `Sleepiness = ${0}`
+//     // changeBackgroundImage = "url('/images/grogu.jpg')"
+//         //I invoke the variable and add as its innerhtml the link above to put the picture as the background. This does not work.
+//         //QUESTION 1: How can I replace my current background when I hit the button for turning off the lights?
+// }
+
+// startSleepinessNumerator()
+
+//REPEAT OF ABOVE SETUP FOR QUESTION 1: WORKING COPY
+
 let getSleepinessNumerator = document.getElementById('sleepinessNumerator')
+
 function startSleepinessNumerator() {
     getSleepinessNumerator.innerText = `Sleepiness = ${0}`
+    
 }
 
 startSleepinessNumerator()
 
 function makeGroguSleep () {
     getSleepinessNumerator.innerText = `Sleepiness = ${babyYoda.sleepiness -= 1}`
+    let changeBackground = document.body.style.background = "url('/images/background-lights-off.jpeg')"
+    changeBackground.style.display = 'block';
+    changeBackground.style.objectFit = 'cover';
+    //source for objectfit and cover: https://stackoverflow.com/questions/24650218/image-in-full-screen-with-img-tag
 }
 
 //PLAY FUNCTIONS    
