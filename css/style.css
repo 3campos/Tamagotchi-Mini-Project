@@ -1,0 +1,44 @@
+/* body {
+    /* background-image: url(/images/grogu_tamagotchi.jpg);
+    background-size: cover; }*/
+
+
+.container1 {
+display: flex;
+justify-content: center;
+align-content: center;
+margin-top: 50px;
+margin-bottom: 0px;
+}
+
+.container2 {
+display: flex;
+justify-content: center;
+align-content: center;
+height: 200px;
+width: 200px;
+margin-top: 200px;
+margin-bottom: 0px;
+margin-left: auto;
+margin-right: auto;
+/* outline: 1px solid red; */
+}
+
+
+/* #grogu_tamagotchi{
+        width: 300px;
+    } */
+
+/* for animating my image, i.e., making it move */
+/* 
+@keyframes mymove {
+    from {top: 0px;}
+    to {top: 200px;}
+  } */
+
+/* for the buttons */
+  /* .container {
+    display:flex;
+    flex-wrap: wrap;
+    width: 300px;
+    } */
