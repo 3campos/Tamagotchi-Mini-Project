@@ -13,3 +13,7 @@ class Tamagotchi {
 }
 
 const babyYoda = new Tamagotchi ("Grogu", 1, 1, 1, 0)
+
+
+
+// document.body.appendChild
