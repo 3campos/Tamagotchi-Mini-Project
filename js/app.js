@@ -40,4 +40,4 @@ function makeGroguPlay {
 //EVENT LISTENERS FOR BUTTONS
 document.getElementById('Feed').addEventListener('click', feedGrogu)
 document.getElementById('Sleep').addEventListener('click', makeGroguSleep)
-// document.getElementById('Play').addEventListener('click', INSERT FUNCTION HERE FOR PLAYING)
+document.getElementById('Play').addEventListener('click', makeGroguPlay)
