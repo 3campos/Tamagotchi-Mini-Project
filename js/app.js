@@ -5,6 +5,13 @@ getHungerNumerator.innerText = `Hunger = ${0}`
 
 startHungerNumerator()
 
+function startSleepinessNumerator() {
+    let getSleepinessNumerator = document.getElementById('sleepNumerator')
+    getSleepinessNumerator.innerText = `Sleepiness = ${0}`
+    }
+    
+    startSleepinessNumerator()
+
 class Tamagotchi {
     constructor(name, hunger, sleepiness, boredom, age){
         this.name = name
