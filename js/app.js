@@ -1,24 +1,3 @@
-function startHungerNumerator() {
-let getHungerNumerator = document.getElementById('hungerNumerator')
-getHungerNumerator.innerText = `Hunger = ${0}`
-}
-
-startHungerNumerator()
-
-function startSleepinessNumerator() {
-    let getSleepinessNumerator = document.getElementById('sleepNumerator')
-    getSleepinessNumerator.innerText = `Sleepiness = ${0}`
-    }
-    
-    startSleepinessNumerator()
-
-function startBoredomNumerator() {
-    let getBoredomNumerator = document.getElementById('boredomNumerator')
-    getBoredomNumerator.innerText = `Boredom = ${0}`
-    }
-    
-    startBoredomNumerator()
-
 class Tamagotchi {
     constructor(name, hunger, sleepiness, boredom, age){
         this.name = name
@@ -37,12 +16,35 @@ class Tamagotchi {
 
 const babyYoda = new Tamagotchi ("Grogu", 1, 1, 1, 0)
 
+function startHungerNumerator() {
+    let getHungerNumerator = document.getElementById('hungerNumerator')
+    getHungerNumerator.innerText = `Hunger = ${babyYoda.hunger}`
+    }
+    
+startHungerNumerator()
+    
+function startSleepinessNumerator() {
+        let getSleepinessNumerator = document.getElementById('sleepNumerator')
+        getSleepinessNumerator.innerText = `Sleepiness = ${babyYoda.sleepiness}`
+        }
+        
+startSleepinessNumerator()
+    
+function startBoredomNumerator() {
+        let getBoredomNumerator = document.getElementById('boredomNumerator')
+        getBoredomNumerator.innerText = `Boredom = ${babyYoda.boredom}`
+        }
+        
+startBoredomNumerator()
+
 function feedGrogu () {
-    babyYoda.hunger -= 1
+    console.log(babyYoda.hunger)
+    babyYoda.hunger--
+    console.log('test feeding')
 }
 
 function makeGroguSleep () {
-babyYoda.sleepiness -= 1
+    babyYoda.sleepiness -= 1
 }
 
 function playWithGrogu () {
@@ -53,9 +55,9 @@ function playWithGrogu () {
 
 //AGE
 //INCREASE PET'S AGE EVERY X MINUTES
-
+//
 //EVENT LISTENERS FOR BUTTONS
-document.getElementById('Feed').addEventListener('click', feedGrogu)
+document.getElementById('Feed').addEventListener('click', () => {feedGrogu()})
 document.getElementById('Sleep').addEventListener('click', makeGroguSleep)
 document.getElementById('Play').addEventListener('click', playWithGrogu)
 
