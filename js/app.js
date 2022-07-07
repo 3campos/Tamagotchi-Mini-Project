@@ -57,8 +57,12 @@ function playWithGrogu () {
 
 //AGE
 //INCREASE PET'S AGE EVERY X MINUTES
-//
+
 //EVENT LISTENERS FOR BUTTONS
 document.getElementById('Feed').addEventListener('click', () => {feedGrogu()})
 document.getElementById('Sleep').addEventListener('click', () => {makeGroguSleep()})
 document.getElementById('Play').addEventListener('click', () => {playWithGrogu()})
+
+//for the lights button, i need to find a way to change the background image to something darker or just change the color to black.
+
+//over time, the values of hunger, sleep and boredom need to decrease at a certain interval so that the player must keep hitting buttons so Grogu doesn't faint

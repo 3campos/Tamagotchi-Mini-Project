@@ -2,6 +2,10 @@
     /* background-image: url(/images/grogu_tamagotchi.jpg);
     background-size: cover; }*/
 
+body{
+  background-image: url(/images/background-lights-on.webp);
+  background-size: cover;
+}
 
 .container1 {
 display: flex;
@@ -22,6 +26,15 @@ margin-bottom: 0px;
 margin-left: auto;
 margin-right: auto;
 /* outline: 1px solid red; */
+}
+
+.container3 {
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  margin-top: 50px;
+  margin-bottom: 50px;
 }
 
 
