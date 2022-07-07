@@ -1,3 +1,10 @@
+function startHungerNumerator() {
+let getHungerNumerator = document.getElementById('hungerNumerator')
+getHungerNumerator.innerText = `Hunger = ${0}`
+}
+
+startHungerNumerator()
+
 class Tamagotchi {
     constructor(name, hunger, sleepiness, boredom, age){
         this.name = name
@@ -16,20 +23,17 @@ class Tamagotchi {
 
 const babyYoda = new Tamagotchi ("Grogu", 1, 1, 1, 0)
 
-function feedGrogu {
+function feedGrogu () {
     babyYoda.hunger -= 1
 }
 
-function makeGroguSleep {
+function makeGroguSleep () {
 babyYoda.sleepiness -= 1
 }
 
-function playWithGrogu {
+function playWithGrogu () {
     babyYoda.boredom -= 1
 }
-
-//first create an array of 1-10
-//hold off: array may not be needed for enumerated values here
 
 // document.body.appendChild (i'll append the results of my for loop that runs through the array of 1-10)
 
@@ -40,3 +44,19 @@ function playWithGrogu {
 document.getElementById('Feed').addEventListener('click', feedGrogu)
 document.getElementById('Sleep').addEventListener('click', makeGroguSleep)
 document.getElementById('Play').addEventListener('click', playWithGrogu)
+
+
+//for reference:
+//for (let i = 0; i<lands.length; i++){
+
+    // console.log(lands[i])
+//     let article = document.createElement("article")
+
+//     article.setAttribute('id', lands[i])
+
+//     let h1 = document.createElement("h1")
+//     let h1Text = h1.innerText = lands[i]
+//     article.innerText = h1Text
+//     realmSec.appendChild(article)
+
+//   document.body.appendChild(realmSec)
