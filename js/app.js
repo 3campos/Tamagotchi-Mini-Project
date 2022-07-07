@@ -16,39 +16,41 @@ class Tamagotchi {
 
 const babyYoda = new Tamagotchi ("Grogu", 1, 1, 1, 0)
 
+//FEED FUNCTIONS
+let getHungerNumerator = document.getElementById('hungerNumerator')
 function startHungerNumerator() {
-    let getHungerNumerator = document.getElementById('hungerNumerator')
-    getHungerNumerator.innerText = `Hunger = ${babyYoda.hunger}`
-    }
-    
+    getHungerNumerator.innerText = `Hunger = ${0}`
+}
+
 startHungerNumerator()
-    
-function startSleepinessNumerator() {
-        let getSleepinessNumerator = document.getElementById('sleepNumerator')
-        getSleepinessNumerator.innerText = `Sleepiness = ${babyYoda.sleepiness}`
-        }
-        
-startSleepinessNumerator()
-    
-function startBoredomNumerator() {
-        let getBoredomNumerator = document.getElementById('boredomNumerator')
-        getBoredomNumerator.innerText = `Boredom = ${babyYoda.boredom}`
-        }
-        
-startBoredomNumerator()
 
 function feedGrogu () {
-    console.log(babyYoda.hunger)
-    babyYoda.hunger--
-    console.log('test feeding')
+    getHungerNumerator.innerText = `Hunger = ${babyYoda.hunger -= 1}`
 }
+
+//SLEEP FUNCTIONS
+let getSleepinessNumerator = document.getElementById('sleepinessNumerator')
+function startSleepinessNumerator() {
+    getSleepinessNumerator.innerText = `Sleepiness = ${0}`
+}
+
+startSleepinessNumerator()
 
 function makeGroguSleep () {
-    babyYoda.sleepiness -= 1
+    getSleepinessNumerator.innerText = `Sleepiness = ${babyYoda.sleepiness -= 1}`
 }
 
+//PLAY FUNCTIONS    
+
+let getBoredomNumerator = document.getElementById('boredomNumerator')
+function startBoredomNumerator() {
+    getBoredomNumerator.innerText = `Boredom = ${0}`
+}
+
+startBoredomNumerator()
+
 function playWithGrogu () {
-    babyYoda.boredom -= 1
+    getBoredomNumerator.innerText = `Boredom = ${babyYoda.boredom -= 1}`
 }
 
 // document.body.appendChild (i'll append the results of my for loop that runs through the array of 1-10)
@@ -58,21 +60,5 @@ function playWithGrogu () {
 //
 //EVENT LISTENERS FOR BUTTONS
 document.getElementById('Feed').addEventListener('click', () => {feedGrogu()})
-document.getElementById('Sleep').addEventListener('click', makeGroguSleep)
-document.getElementById('Play').addEventListener('click', playWithGrogu)
-
-
-//for reference:
-//for (let i = 0; i<lands.length; i++){
-
-    // console.log(lands[i])
-//     let article = document.createElement("article")
-
-//     article.setAttribute('id', lands[i])
-
-//     let h1 = document.createElement("h1")
-//     let h1Text = h1.innerText = lands[i]
-//     article.innerText = h1Text
-//     realmSec.appendChild(article)
-
-//   document.body.appendChild(realmSec)
+document.getElementById('Sleep').addEventListener('click', () => {makeGroguSleep()})
+document.getElementById('Play').addEventListener('click', () => {playWithGrogu()})
