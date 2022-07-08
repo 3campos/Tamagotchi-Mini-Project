@@ -120,11 +120,16 @@ function playWithGrogu () {
     //1. the name prompt.
     //2. An alert that the timers will start/that the game will begin.
 
+function ageGrogu () {
+    console.log(babyYoda.age += 1)
+}
 
 //EVENT LISTENERS FOR BUTTONS
-document.getElementById('startButton').addEventListener('click',() => {//insert future startGame method
+document.getElementById('startButton').addEventListener('click',() => {
+    setInterval(ageGrogu, 5000)
+    //insert future startGame method that will run timers
+    //is there a way to prevent the buttons from being clicked before the start button is clicked?
 })
-
 document.getElementById('Feed').addEventListener('click', () => {feedGrogu()})
 document.getElementById('Sleep').addEventListener('click', () => {makeGroguSleep()})
 document.getElementById('Play').addEventListener('click', () => {playWithGrogu()})
