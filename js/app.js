@@ -115,7 +115,16 @@ function playWithGrogu () {
 //AGE
 //INCREASE PET'S AGE EVERY X MINUTES
 
+//Timer
+//need a button to START that the player needs to push. That will trigger:
+    //1. the name prompt.
+    //2. An alert that the timers will start/that the game will begin.
+
+
 //EVENT LISTENERS FOR BUTTONS
+document.getElementById('startButton').addEventListener('click',() => {//insert future startGame method
+})
+
 document.getElementById('Feed').addEventListener('click', () => {feedGrogu()})
 document.getElementById('Sleep').addEventListener('click', () => {makeGroguSleep()})
 document.getElementById('Play').addEventListener('click', () => {playWithGrogu()})
