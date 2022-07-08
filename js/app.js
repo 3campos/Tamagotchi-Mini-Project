@@ -117,6 +117,14 @@ function ageGrogu () {
 getAgeNumerator.innerText = `Age = ${babyYoda.age += 1} years`
 }
 
+function makeGroguHungry () {
+    getHungerNumerator.innerText = `Hunger = ${babyYoda.hunger += 1}`
+    }
+
+function makeGroguBored () {
+    getBoredomNumerator.innerText = `Boredom = ${babyYoda.boredom += 1}`
+    }
+
 //EVENT LISTENERS FOR BUTTONS
 
 document.getElementById('startButton').addEventListener('click',() => {
@@ -128,6 +136,9 @@ document.getElementById('startButton').addEventListener('click',() => {
     }
     promptForName()
     setInterval(ageGrogu, 5000)
+    setInterval(makeGroguHungry, 5000)
+    setInterval(makeGroguBored, 5000)
+    // setInterval()
     //insert future startGame method that will run timers
     //is there a way to prevent the buttons from being clicked before the start button is clicked?
     document.getElementById('Feed').addEventListener('click', () => {feedGrogu()})
