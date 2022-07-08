@@ -1,21 +1,4 @@
 //TURN PROMPT BACK ON. I TURNED THIS OFF TEMPORARILY WHILE WORKING.
-
-
-//function welcomeIntro(){
-//alert(`Welcome to Tamagrogu! Prevent Grogu's's hunger, sleepiness and boredom from reaching 10 by feeding him, turning off the lights and giving him a silver ball. Grogu is aging and will eventually evolve. You win when Grogu turns 60 years old!`)
-//}
-
-// let tamagotchiName = prompt("Enter Grogu's nickname")
-// function promptForName(){
-//     if (tamagotchiName != null) {
-//         document.getElementById('nameGrogu').innerText = `Tamagrogu AKA ${tamagotchiName}`
-//     }
-// }
-
-// promptForName()
-
-//
-
 class Tamagotchi {
     constructor(name, hunger, sleepiness, boredom, age){
         this.name = name
@@ -120,10 +103,10 @@ function playWithGrogu () {
     getBoredomNumerator.innerText = `Boredom = ${babyYoda.boredom -= 1}`
 }
 
-//AGE
 //INCREASE PET'S AGE EVERY X MINUTES
 
-//Timer
+//TIMER FUNCTIONS
+//AGE
 //need a button to START that the player needs to push. That will trigger:
     //1. the name prompt.
     //2. An alert that the timers will start/that the game will begin.
@@ -137,7 +120,13 @@ getAgeNumerator.innerText = `Age = ${babyYoda.age += 1} years`
 //EVENT LISTENERS FOR BUTTONS
 
 document.getElementById('startButton').addEventListener('click',() => {
-    alert('Begin!')
+    let tamagotchiName = prompt("Enter Grogu's nickname")
+    function promptForName(){
+    if (tamagotchiName != null) {
+    document.getElementById('nameGrogu').innerText = `Tamagrogu AKA ${tamagotchiName}`
+        }
+    }
+    promptForName()
     setInterval(ageGrogu, 5000)
     //insert future startGame method that will run timers
     //is there a way to prevent the buttons from being clicked before the start button is clicked?
@@ -146,6 +135,14 @@ document.getElementById('startButton').addEventListener('click',() => {
     document.getElementById('Play').addEventListener('click', () => {playWithGrogu()})
 })
 
+setTimeout(function welcomeIntro(){
+    alert(
+`Welcome to Tamagrogu! Prevent Grogu's hunger, sleepiness and boredom from reaching 10 by feeding him, turning off the lights and giving him a silver ball.
+
+Grogu is aging and will eventually evolve. You win when Grogu turns 65 years old! Click 'START' to begin!`)
+    }, 100)
+    
+welcomeIntro()
 
 //for the lights button, i need to find a way to change the background image to something darker or just change the color to black.
 
