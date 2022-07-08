@@ -1,4 +1,10 @@
 //TURN PROMPT BACK ON. I TURNED THIS OFF TEMPORARILY WHILE WORKING.
+
+
+//function welcomeIntro(){
+//alert(`Welcome to Tamagrogu! Prevent Grogu's's hunger, sleepiness and boredom from reaching 10 by feeding him, turning off the lights and giving him a silver ball. Grogu is aging and will eventually evolve. You win when Grogu turns 60 years old!`)
+//}
+
 // let tamagotchiName = prompt("Enter Grogu's nickname")
 // function promptForName(){
 //     if (tamagotchiName != null) {
@@ -7,6 +13,8 @@
 // }
 
 // promptForName()
+
+//
 
 class Tamagotchi {
     constructor(name, hunger, sleepiness, boredom, age){
@@ -24,12 +32,12 @@ class Tamagotchi {
     }
 }
 
-const babyYoda = new Tamagotchi (`tamagotchiName`, 1, 1, 1, 0)
+const babyYoda = new Tamagotchi (`tamagotchiName`, 0, 0, 0, 50)
 
 //FEED FUNCTIONS
 let getHungerNumerator = document.getElementById('hungerNumerator')
 function startHungerNumerator() {
-    getHungerNumerator.innerText = `Hunger = ${0}`
+    getHungerNumerator.innerText = `Hunger = ${babyYoda.hunger}`
 }
 
 startHungerNumerator()
@@ -120,22 +128,24 @@ function playWithGrogu () {
     //1. the name prompt.
     //2. An alert that the timers will start/that the game will begin.
 let getAgeNumerator = document.getElementById('ageNumerator')
-getAgeNumerator.innerText = `Age = ${babyYoda.age}`
+getAgeNumerator.innerText = `Age = ${babyYoda.age} years`
 
 function ageGrogu () {
-getAgeNumerator.innerText = `Age = ${babyYoda.age += 1})`
+getAgeNumerator.innerText = `Age = ${babyYoda.age += 1} years`
 }
 
 //EVENT LISTENERS FOR BUTTONS
 
 document.getElementById('startButton').addEventListener('click',() => {
+    alert('Begin!')
     setInterval(ageGrogu, 5000)
     //insert future startGame method that will run timers
     //is there a way to prevent the buttons from being clicked before the start button is clicked?
+    document.getElementById('Feed').addEventListener('click', () => {feedGrogu()})
+    document.getElementById('Sleep').addEventListener('click', () => {makeGroguSleep()})
+    document.getElementById('Play').addEventListener('click', () => {playWithGrogu()})
 })
-document.getElementById('Feed').addEventListener('click', () => {feedGrogu()})
-document.getElementById('Sleep').addEventListener('click', () => {makeGroguSleep()})
-document.getElementById('Play').addEventListener('click', () => {playWithGrogu()})
+
 
 //for the lights button, i need to find a way to change the background image to something darker or just change the color to black.
 
