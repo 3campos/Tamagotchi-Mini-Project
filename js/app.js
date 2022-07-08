@@ -41,7 +41,7 @@ function feedGrogu () {
 let getSleepinessNumerator = document.getElementById('sleepinessNumerator')
 
 function startSleepinessNumerator() {
-    getSleepinessNumerator.innerText = `Sleepiness = ${0}`
+    getSleepinessNumerator.innerText = `Sleepiness = ${babyYoda.sleepiness}`
 }
 
 startSleepinessNumerator()
@@ -103,7 +103,7 @@ function makeGroguSleep () {
 
 let getBoredomNumerator = document.getElementById('boredomNumerator')
 function startBoredomNumerator() {
-    getBoredomNumerator.innerText = `Boredom = ${0}`
+    getBoredomNumerator.innerText = `Boredom = ${babyYoda.boredom}`
 }
 
 startBoredomNumerator()
@@ -119,12 +119,15 @@ function playWithGrogu () {
 //need a button to START that the player needs to push. That will trigger:
     //1. the name prompt.
     //2. An alert that the timers will start/that the game will begin.
+let getAgeNumerator = document.getElementById('ageNumerator')
+getAgeNumerator.innerText = `Age = ${babyYoda.age}`
 
 function ageGrogu () {
-    console.log(babyYoda.age += 1)
+getAgeNumerator.innerText = `Age = ${babyYoda.age += 1})`
 }
 
 //EVENT LISTENERS FOR BUTTONS
+
 document.getElementById('startButton').addEventListener('click',() => {
     setInterval(ageGrogu, 5000)
     //insert future startGame method that will run timers
