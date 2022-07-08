@@ -32,6 +32,19 @@ justify-content: center;
 align-content: center;
 margin-top: 30px;
 margin-bottom: 0px;
+justify-content: space-evenly;
+}
+
+#Feed{
+  border: solid thick cyan;
+}
+
+#Sleep{
+  border: solid thick crimson;
+}
+
+#Play{
+  border: solid thick rgb(125, 124, 124);
 }
 
 .container2 {

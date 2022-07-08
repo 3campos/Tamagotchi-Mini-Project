@@ -20,11 +20,11 @@ class Tamagotchi {
         //add something here to change from original image to next image
         //start with grogu in pod, then upgrade to grogu in either chain mail or with din djarin.
         //the alert should follow after the evolution or be at the same time.
-        alert('Grogu is evolving. He has gained a pal.')
+        alert(`${tamagotchiName} is evolving. He has gained a pal.`)
     }
 }
 
-const babyYoda = new Tamagotchi ("Grogu", 1, 1, 1, 0)
+const babyYoda = new Tamagotchi (`tamagotchiName`, 1, 1, 1, 0)
 
 //FEED FUNCTIONS
 let getHungerNumerator = document.getElementById('hungerNumerator')
