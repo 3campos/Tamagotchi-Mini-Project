@@ -1,3 +1,8 @@
+// promptForName = prompt("Enter your name");
+//         switch(promptForToolUpgrade) {
+//         case 'Upgrade':
+//         }
+
 class Tamagotchi {
     constructor(name, hunger, sleepiness, boredom, age){
         this.name = name
@@ -47,9 +52,10 @@ function makeGroguSleep () {
     //sleepiness numerator is decreased by one with every click
     if (lightSwitchClickCount % 2 === 0){
         //an if function to display the background when the lights are on, i.e, the click count is even.
-    let changeBackground = document.body.style.background = "url('/images/background-lights-on.webp')"
+    document.body.style.backgroundImage = "url('/images/background-lights-on.webp')"
     //i add a background to display when the lights are on after the sleep button is clicked
-    changeBackground.backgroundSize = 'cover';
+    document.body.style.backgroundSize = 'cover';
+    document.body.style.backgroundRepeat = 'no-repeat';
     // changeBackground.width = '100%';
     // //i adjust the width of the background
     // changeBackground.height = '100%';
@@ -57,16 +63,19 @@ function makeGroguSleep () {
     //QUESTION: Why is there still a space at the bottom of the page when I've specified that I want the height to be 100%????!!!
     }
     else {
-    changeBackground = document.body.style.background = "url('/images/background-lights-off.jpeg')"
+    document.body.style.backgroundImage = "url('/images/background-lights-off.jpeg')"
+    //e.g.: JavaScript syntax:	object.style.backgroundImage="url(img_tree.gif)"
+    //try background-image
+        //then try the below
     //i change the background image
-    changeBackground.height = '100%';
-    changeBackground.width = '100%';
+    // changeBackground.height = '100%';
+    // changeBackground.width = '100%';
     // i attempt to change the image properties by setting the height to fill the screen, which doesn't work.
-    changeBackground.backgroundSize = 'cover';
+    document.body.style.backgroundSize = 'cover';
     // i attempt to change the image properties to make it fill the screen a different way, with "cover", which doesn't work.
-    changeBackground.backgroundPosition = 'center';
+    // changeBackground.backgroundPosition = 'center';
     // i attempt to center the image, which doesn't work.
-    changeBackground.backgroundRepeat = 'no-repeat';
+    document.body.style.backgroundRepeat = 'no-repeat';
     // i attempt to force image to not repeat, which doesn't work.
     }
     //source: https://www.w3schools.com/howto/howto_css_full_page.asp
