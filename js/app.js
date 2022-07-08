@@ -53,7 +53,7 @@ function makeGroguSleep () {
     //start of my function linked to the kill lights button
     lightSwitchClickCount += 1;
     //adding one to the click count each time the button is clicked
-    getSleepinessNumerator.innerText = `Sleepiness = ${babyYoda.sleepiness -= 1}`
+    
     //sleepiness numerator is decreased by one with every click
     if (lightSwitchClickCount % 2 === 0){
         //an if function to display the background when the lights are on, i.e, the click count is even.
@@ -68,6 +68,7 @@ function makeGroguSleep () {
     //QUESTION: Why is there still a space at the bottom of the page when I've specified that I want the height to be 100%????!!!
     }
     else {
+    getSleepinessNumerator.innerText = `Sleepiness = ${babyYoda.sleepiness -= 1}`
     document.body.style.backgroundImage = "url('/images/background-lights-off.jpeg')"
     //e.g.: JavaScript syntax:	object.style.backgroundImage="url(img_tree.gif)"
     //try background-image
