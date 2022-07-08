@@ -29,41 +29,31 @@ function feedGrogu () {
     getHungerNumerator.innerText = `Hunger = ${babyYoda.hunger -= 1}`
 }
 
+//SLEEP FUNCTIONS
 let getSleepinessNumerator = document.getElementById('sleepinessNumerator')
-
 function startSleepinessNumerator() {
     getSleepinessNumerator.innerText = `Sleepiness = ${babyYoda.sleepiness}`
 }
 
 startSleepinessNumerator()
+//the webpage is returning NaN even though teh timer function appears as the same as the timer functions for the others
+//i get undefined when i console.log the line that's directly above
 
 let lightSwitchClickCount = 0;
 //created light switch variable and declared it as equal to 0
-
 function makeGroguSleep () {
     //start of my function linked to the kill lights button
     lightSwitchClickCount += 1;
     //adding one to the click count each time the button is clicked
-    
     //sleepiness numerator is decreased by one with every click
-    if (lightSwitchClickCount % 2 === 0){
+    if (lightSwitchClickCount === 0 || lightSwitchClickCount % 2 === 0){
         //an if function to display the background when the lights are on, i.e, the click count is even.
     document.body.style.backgroundImage = "url('/images/background-lights-on.webp')"
-    //i add a background to display when the lights are on after the sleep button is clicked
     document.body.style.backgroundSize = 'cover';
     document.body.style.backgroundRepeat = 'no-repeat';
-    function tireGrogu () {
-        getSleepinessNumerator.innerText = `Sleepiness = ${babyYoda.sleep += 1}`
-        }
-        setInterval(tireGrogu, 5000)
-    // changeBackground.width = '100%';
-    // //i adjust the width of the background
-    // changeBackground.height = '100%';
-    //pseudocode: 
-    //QUESTION: Why is there still a space at the bottom of the page when I've specified that I want the height to be 100%????!!!
     }
     else {
-    getSleepinessNumerator.innerText = `Sleepiness = ${babyYoda.sleepiness -= 1}`
+    getSleepinessNumerator.innerText = `Sleepiness = ${babyYoda.sleepiness -= 2}`
     document.body.style.backgroundImage = "url('/images/background-lights-off.jpeg')"
     //e.g.: JavaScript syntax:	object.style.backgroundImage="url(img_tree.gif)"
     //try background-image
@@ -129,6 +119,10 @@ function makeGroguBored () {
     getBoredomNumerator.innerText = `Boredom = ${babyYoda.boredom += 1}`
     }
 
+function tireGrogu () {
+    getSleepinessNumerator.innerText = `Sleepiness = ${babyYoda.sleepiness += 1}`
+    }
+
 //EVENT LISTENERS FOR BUTTONS
 
 document.getElementById('startButton').addEventListener('click',() => {
@@ -142,7 +136,7 @@ document.getElementById('startButton').addEventListener('click',() => {
     setInterval(ageGrogu, 5000)
     setInterval(makeGroguHungry, 5000)
     setInterval(makeGroguBored, 5000)
-    // setInterval()
+    setInterval(tireGrogu, 5000)
     //insert future startGame method that will run timers
     //is there a way to prevent the buttons from being clicked before the start button is clicked?
     document.getElementById('Feed').addEventListener('click', () => {feedGrogu()})
@@ -156,8 +150,7 @@ setTimeout(function welcomeIntro(){
 
 Grogu is aging and will eventually evolve. You win when Grogu turns 65 years old! Click 'START' to begin!`)
     }, 100)
-    
-welcomeIntro()
+
 
 //for the lights button, i need to find a way to change the background image to something darker or just change the color to black.
 
