@@ -52,6 +52,10 @@ function makeGroguSleep () {
     //i add a background to display when the lights are on after the sleep button is clicked
     document.body.style.backgroundSize = 'cover';
     document.body.style.backgroundRepeat = 'no-repeat';
+    function tireGrogu () {
+        getSleepinessNumerator.innerText = `Sleepiness = ${babyYoda.sleep += 1}`
+        }
+        setInterval(tireGrogu, 5000)
     // changeBackground.width = '100%';
     // //i adjust the width of the background
     // changeBackground.height = '100%';
