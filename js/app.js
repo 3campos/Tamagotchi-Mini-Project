@@ -1,7 +1,11 @@
-// promptForName = prompt("Enter your name");
-//         switch(promptForToolUpgrade) {
-//         case 'Upgrade':
-//         }
+let tamagotchiName = prompt("Enter Grogu's nickname")
+function promptForName(){
+    if (tamagotchiName != null) {
+        document.getElementById('nameGrogu').innerText = tamagotchiName
+    }
+}
+
+promptForName()
 
 class Tamagotchi {
     constructor(name, hunger, sleepiness, boredom, age){
@@ -76,6 +80,7 @@ function makeGroguSleep () {
     // changeBackground.backgroundPosition = 'center';
     // i attempt to center the image, which doesn't work.
     document.body.style.backgroundRepeat = 'no-repeat';
+    //TODO: make the 'off' background dimmer. There's a way to do this, i've seen it. Research it.
     // i attempt to force image to not repeat, which doesn't work.
     }
     //source: https://www.w3schools.com/howto/howto_css_full_page.asp
