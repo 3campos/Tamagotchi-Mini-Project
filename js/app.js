@@ -1,7 +1,8 @@
+//TURN PROMPT BACK ON. TURNING OFF WHILE WORKING.
 let tamagotchiName = prompt("Enter Grogu's nickname")
 function promptForName(){
     if (tamagotchiName != null) {
-        document.getElementById('nameGrogu').innerText = tamagotchiName
+        document.getElementById('nameGrogu').innerText = `Tamagrogu AKA ${tamagotchiName}`
     }
 }
 
