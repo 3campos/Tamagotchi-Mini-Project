@@ -1,12 +1,12 @@
-//TURN PROMPT BACK ON. TURNING OFF WHILE WORKING.
-let tamagotchiName = prompt("Enter Grogu's nickname")
-function promptForName(){
-    if (tamagotchiName != null) {
-        document.getElementById('nameGrogu').innerText = `Tamagrogu AKA ${tamagotchiName}`
-    }
-}
+//TURN PROMPT BACK ON. I TURNED THIS OFF TEMPORARILY WHILE WORKING.
+// let tamagotchiName = prompt("Enter Grogu's nickname")
+// function promptForName(){
+//     if (tamagotchiName != null) {
+//         document.getElementById('nameGrogu').innerText = `Tamagrogu AKA ${tamagotchiName}`
+//     }
+// }
 
-promptForName()
+// promptForName()
 
 class Tamagotchi {
     constructor(name, hunger, sleepiness, boredom, age){
