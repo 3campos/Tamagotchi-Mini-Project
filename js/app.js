@@ -67,7 +67,7 @@ if (lightSwitchClickCount % 2 === 0){
         }
 } else if (lightSwitchClickCount % 2 != 0){
     const rejuvenateTimer = setInterval(rejuvenateGrogu, 4000)
-    document.body.style.backgroundImage = "url('/.images/background-lights-off.jpeg')";
+    document.body.style.backgroundImage = "url('./images/background-lights-off.jpeg')";
     document.body.style.backgroundSize = 'cover';
     document.body.style.backgroundRepeat = 'no-repeat';
     if (lightSwitchClickCount % 2 === 0){
@@ -164,7 +164,7 @@ function ageGrogu () {
     getAgeNumerator.innerText = `Age = ${babyYoda.age += 1} years`
     }
     if (babyYoda.age === 52){
-        document.getElementById('groguTamagotchi').src='images/evolve_grogu_and_din.jpg'
+        document.getElementById('groguTamagotchi').src='.images/evolve_grogu_and_din.jpg'
         //add something here to change from original image to next image
         //start with grogu in pod, then upgrade to grogu in either chain mail or with din djarin.
         //the alert should follow after the evolution or be at the same time.
