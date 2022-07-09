@@ -55,8 +55,10 @@ function rejuvenateGrogu () {
 
 //REFBOOT
 let lightSwitchClickCount = 0
-if (lightSwitchClickCount === 0) {document.body.style.backgroundImage = "url('../images/background-lights-on.webp')";
-document.body.style.backgroundSize = 'cover';}
+if (lightSwitchClickCount === 0) {
+    document.body.style.backgroundImage = "url('../images/background-lights-on.webp')";
+    document.body.style.backgroundSize = 'cover';
+    document.body.style.backgroundRepeat = 'no-repeat';}
 
 function increaselightSwitchClickCount(){
     lightSwitchClickCount += 1
