@@ -164,13 +164,13 @@ let getAgeNumerator = document.getElementById('ageNumerator')
 getAgeNumerator.innerText = `Age = ${babyYoda.age} years`
 
 function ageGrogu () {
-    if (babyYoda.age < 52){
+    if (babyYoda.age < 53){
         document.getElementById('groguTamagotchi').src='./images/grogu_tamagotchi.png'
     }
     if (babyYoda.age < 66){
     getAgeNumerator.innerText = `Age = ${babyYoda.age += 1} years`
     }
-    if (babyYoda.age === 52){
+    if (babyYoda.age === 53){
         document.getElementById('groguTamagotchi').src='./images/evolve_grogu_and_din.jpg'
         //add something here to change from original image to next image
         //start with grogu in pod, then upgrade to grogu in either chain mail or with din djarin.
