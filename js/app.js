@@ -36,43 +36,85 @@ function startSleepinessNumerator() {
 }
 
 startSleepinessNumerator()
+
+
+//lights off function related to sleep
+function tireGrogu () {
+    getSleepinessNumerator.innerText = `Sleepiness = ${babyYoda.sleepiness += 1}`
+    }
+
+//lights on function related to sleep
+function rejuvinateGrogu () {
+    getSleepinessNumerator.innerText = `Sleepiness = ${babyYoda.sleepiness -= 2}`
+    }
+
 //the webpage is returning NaN even though teh timer function appears as the same as the timer functions for the others
 //i get undefined when i console.log the line that's directly above
 
-let lightSwitchClickCount = 0;
-//created light switch variable and declared it as equal to 0
-function makeGroguSleep () {
-    //start of my function linked to the kill lights button
-    lightSwitchClickCount += 1;
-    //adding one to the click count each time the button is clicked
-    //sleepiness numerator is decreased by one with every click
-    if (lightSwitchClickCount === 0 || lightSwitchClickCount % 2 === 0){
-        //an if function to display the background when the lights are on, i.e, the click count is even.
-    document.body.style.backgroundImage = "url('/images/background-lights-on.webp')"
+//REFBOOT
+let lightSwitchClickCount = 0
+function increaselightSwitchClickCount(){
+    lightSwitchClickCount += 1
+if (lightSwitchClickCount % 2 === 0){
+    setInterval(tireGrogu, 5000)
+    document.body.style.backgroundImage = "url('/images/background-lights-on.webp')";
+    document.body.style.backgroundSize = 'cover';
+    document.body.style.backgroundRepeat = 'no-repeat';
+} else if (lightSwitchClickCount % 2 != 0){
+    setInterval(rejuvinateGrogu, 2500)
+    document.body.style.backgroundImage = "url('/images/background-lights-off.jpeg')";
     document.body.style.backgroundSize = 'cover';
     document.body.style.backgroundRepeat = 'no-repeat';
     }
-    else {
-    getSleepinessNumerator.innerText = `Sleepiness = ${babyYoda.sleepiness -= 2}`
-    document.body.style.backgroundImage = "url('/images/background-lights-off.jpeg')"
-    //e.g.: JavaScript syntax:	object.style.backgroundImage="url(img_tree.gif)"
-    //try background-image
-        //then try the below
-    //i change the background image
-    // changeBackground.height = '100%';
-    // changeBackground.width = '100%';
-    // i attempt to change the image properties by setting the height to fill the screen, which doesn't work.
-    document.body.style.backgroundSize = 'cover';
-    // i attempt to change the image properties to make it fill the screen a different way, with "cover", which doesn't work.
-    // changeBackground.backgroundPosition = 'center';
-    // i attempt to center the image, which doesn't work.
-    document.body.style.backgroundRepeat = 'no-repeat';
-    //TODO: make the 'off' background dimmer. There's a way to do this, i've seen it. Research it.
-    // i attempt to force image to not repeat, which doesn't work.
-    }
-    //source: https://www.w3schools.com/howto/howto_css_full_page.asp
-    //QUESTION: why is my background image tiled all over hte screen instead of filling it based on the above code that I specified?
 }
+// function sleepCountPreLightClick () {
+//     if (lightSwitchClickCount === 0){
+//     setInterval(tireGrogu, 5000)
+//     } else {
+//     clearInterval(tireGrogu)
+//     }
+// }
+
+//created light switch variable and declared it as equal to 0
+// function makeGroguSleep () {
+//     //start of my function linked to the kill lights button
+//     lightSwitchClickCount += 1;
+//     //adding one to the click count each time the button is clicked
+//     //sleepiness numerator is decreased by one with every click
+//     // let timerRejuvinateGrogu = setInterval(rejuvinateGrogu, 5000)
+    
+//     if (lightSwitchClickCount % 2 === 0){
+//         //an if function to display the background when the lights are on, i.e, the click count is even.
+//     let timerTireGrogu = setInterval(tireGrogu, 5000);
+//     document.body.style.backgroundImage = "url('/images/background-lights-on.webp')";
+//     document.body.style.backgroundSize = 'cover';
+//     document.body.style.backgroundRepeat = 'no-repeat';
+//     // clearInterval(timerRejuvinateGrogu)
+//     }
+//     //add something to kill interval increase
+//     if (lightSwitchClickCount % 2 != 0){
+//     clearInterval(timerTireGrogu);
+//     // timerRejuvinateGrogu = setInterval(rejuvinateGrogu, 5000);
+//     //add something to kill interval decrease
+//     document.body.style.backgroundImage = "url('/images/background-lights-off.jpeg')";
+//     //e.g.: JavaScript syntax:	object.style.backgroundImage="url(img_tree.gif)"
+//     //try background-image
+//         //then try the below
+//     //i change the background image
+//     // changeBackground.height = '100%';
+//     // changeBackground.width = '100%';
+//     // i attempt to change the image properties by setting the height to fill the screen, which doesn't work.
+//     document.body.style.backgroundSize = 'cover';
+//     // i attempt to change the image properties to make it fill the screen a different way, with "cover", which doesn't work.
+//     // changeBackground.backgroundPosition = 'center';
+//     // i attempt to center the image, which doesn't work.
+//     document.body.style.backgroundRepeat = 'no-repeat';
+//     //TODO: make the 'off' background dimmer. There's a way to do this, i've seen it. Research it.
+//     // i attempt to force image to not repeat, which doesn't work.
+//     }
+//     //source: https://www.w3schools.com/howto/howto_css_full_page.asp
+//     //QUESTION: why is my background image tiled all over hte screen instead of filling it based on the above code that I specified?
+// }
 //     //source for objectfit and cover: https://stackoverflow.com/questions/24650218/image-in-full-screen-with-img-tag
 //QUESTION: How do I make the lights off background fit the whole screen? The lightsoff background is displaying in tiles. I used the code above to try to accomplish this: changeBackground.style.objectFit = 'cover';
 //         //That did not work. Any other ideas?
@@ -119,9 +161,6 @@ function makeGroguBored () {
     getBoredomNumerator.innerText = `Boredom = ${babyYoda.boredom += 1}`
     }
 
-function tireGrogu () {
-    getSleepinessNumerator.innerText = `Sleepiness = ${babyYoda.sleepiness += 1}`
-    }
 
 //EVENT LISTENERS FOR BUTTONS
 
@@ -133,16 +172,19 @@ document.getElementById('startButton').addEventListener('click',() => {
         }
     }
     promptForName()
+    // sleepCountPreLightClick ()
     setInterval(ageGrogu, 5000)
     setInterval(makeGroguHungry, 5000)
     setInterval(makeGroguBored, 5000)
     setInterval(tireGrogu, 5000)
     //insert future startGame method that will run timers
     //is there a way to prevent the buttons from being clicked before the start button is clicked?
-    document.getElementById('Feed').addEventListener('click', () => {feedGrogu()})
-    document.getElementById('Sleep').addEventListener('click', () => {makeGroguSleep()})
-    document.getElementById('Play').addEventListener('click', () => {playWithGrogu()})
 })
+
+    document.getElementById('Feed').addEventListener('click', () => {feedGrogu()})
+    // document.getElementById('Sleep').addEventListener('click', () => {makeGroguSleep()})
+    document.getElementById('Sleep').addEventListener('click', () => {increaselightSwitchClickCount()})
+    document.getElementById('Play').addEventListener('click', () => {playWithGrogu()})
 
 setTimeout(function welcomeIntro(){
     alert(
