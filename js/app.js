@@ -211,6 +211,7 @@ document.getElementById('startButton').addEventListener('click',() => {
     if (tamagotchiName != null) {
     document.getElementById('nameGrogu').innerText = `Tamagrogu AKA ${tamagotchiName}`
         }
+    // document.getElementById('groguTamagotchi').src='./images/grogu_tamagotchi.png'
     }
     promptForName()
     // sleepCountPreLightClick ()
