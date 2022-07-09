@@ -73,7 +73,7 @@ if (lightSwitchClickCount % 2 === 0){
 } else if (lightSwitchClickCount % 2 != 0){
     const rejuvenateTimer = setInterval(rejuvenateGrogu, 4000)
     document.body.style.backgroundImage = "url('../images/background-lights-off.jpeg')";
-    document.body.style.backgroundSize = 'cover';
+    document.body.style.backgroundSize = 'cover 1000px';
     document.body.style.backgroundRepeat = 'no-repeat';
     if (lightSwitchClickCount % 2 === 0){
             clearInterval(rejuvenateTimer)
