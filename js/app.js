@@ -164,6 +164,9 @@ let getAgeNumerator = document.getElementById('ageNumerator')
 getAgeNumerator.innerText = `Age = ${babyYoda.age} years`
 
 function ageGrogu () {
+    if (babyYoda.age < 52){
+        document.getElementById('groguTamagotchi').src='./images/grogu_tamagotchi.png'
+    }
     if (babyYoda.age < 66){
     getAgeNumerator.innerText = `Age = ${babyYoda.age += 1} years`
     }
@@ -213,7 +216,6 @@ document.getElementById('startButton').addEventListener('click',() => {
         }
     }
     promptForName()
-    document.getElementById('groguTamagotchi').src='./images/grogu_tamagotchi.png'
     // sleepCountPreLightClick ()
     setInterval(ageGrogu, 5000)
     setInterval(makeGroguHungry, 5000)
