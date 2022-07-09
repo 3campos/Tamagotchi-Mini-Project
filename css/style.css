@@ -20,7 +20,8 @@ body{
 display: flex;
 justify-content: center;
 align-content: center;
-color: whitesmoke;
+color: #b2a399;
+text-shadow: 2px 2px #9cbb80;
 font-size: 40px;
 margin: 10px 15px auto auto;
 }
@@ -37,10 +38,13 @@ justify-content: space-evenly;
 
 #Feed{
   border: solid thick cyan;
+  background-color: peachpuff;
 }
 
 #Sleep{
   border: solid thick crimson;
+  background-color: rgba(0, 0, 0, 0.724);
+  color: lightgoldenrodyellow;
 }
 
 #Play{
@@ -61,29 +65,31 @@ margin-top: 130px;
 margin-bottom: 100px;
 margin-left: auto;
 margin-right: auto;
-animation-duration: 8s;
-animation-name: slide;
+animation-duration: 5s;
+animation-name: floatGrogu;
 animation-iteration-count: infinite;
-alternate-direction: alternate;
+animation-timing-function: ease-in-out;
 animation-delay: 0s;
+alternate-direction: alternate;
 /* border: solid 6px #9cbb80; */
 /*obtained the above color by googling grogu's skin color hex code and finding it on this website: https://colorswall.com/palette/85592*/
 /* border-radius: 110px; */
 /* outline: 1px solid red; */
 }
 
-@keyframes slide{
-  from {
-    center: 100%;
-    width: 630%;
-  }
-  to {
-    center: 100%;
-    width: 100%;
-  }
+@keyframes floatGrogu{
+    0% {transform: translate(0, 0px); }
+    50% {transform: translate(0, 15px); }
+    100% {transform: translate(0, 0px); }   
 }
 
+/*source for transform and translate: https://www.geeksforgeeks.org/css-floating-animation/
+The % values dictate in what poinnt in the process the animation is in. So halfway through the animation, the element will reach the point that we've specified, or moving it 15 pixels.
+transform allows the user to move, an element to coordinates that you input in the translation code.
+translate moves the object vertically and horizontally on a 2d plane. Here, we're moving the element vertically (along the y axis) 15 pixels.  */
+
 .container3 {
+  border: dotted thin #9cbb80; 
   color: white;
   display: flex;
   align-content: center;
