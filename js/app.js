@@ -59,7 +59,7 @@ function increaselightSwitchClickCount(){
     lightSwitchClickCount += 1
 if (lightSwitchClickCount % 2 === 0){
     const tireTimer = setInterval(tireGrogu, 5000)
-    document.body.style.backgroundImage = "url('/images/background-lights-on.webp')";
+    document.body.style.backgroundImage = "url('./images/background-lights-on.webp')";
     document.body.style.backgroundSize = 'cover';
     document.body.style.backgroundRepeat = 'no-repeat';
         if (lightSwitchClickCount % 2 != 0){
@@ -67,7 +67,7 @@ if (lightSwitchClickCount % 2 === 0){
         }
 } else if (lightSwitchClickCount % 2 != 0){
     const rejuvenateTimer = setInterval(rejuvenateGrogu, 4000)
-    document.body.style.backgroundImage = "url('/images/background-lights-off.jpeg')";
+    document.body.style.backgroundImage = "url('/.images/background-lights-off.jpeg')";
     document.body.style.backgroundSize = 'cover';
     document.body.style.backgroundRepeat = 'no-repeat';
     if (lightSwitchClickCount % 2 === 0){
@@ -171,11 +171,11 @@ function ageGrogu () {
         alert(`Tamagrogu has gained a pal.`)
     }
     if (babyYoda.age === 60){
-        document.getElementById('groguTamagotchi').src='images/grogu_and_din.jpg'
+        document.getElementById('groguTamagotchi').src='.images/grogu_and_din.jpg'
         alert(`Tamagrogu has chosen Din over Luke.`)
     }
     if (babyYoda.age === 65){
-        document.body.style.backgroundImage = 'url("images/Final-Image.webp")'
+        document.body.style.backgroundImage = 'url(".images/Final-Image.webp")'
         alert('You win!')
     }
 }
