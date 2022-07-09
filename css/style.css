@@ -11,10 +11,10 @@ body{
   font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
 }
 
-#background {
-  background-image: url(./images/background-lights-on.webp);
+/* #background {
+  background-image: url(/Users/emiliocamposjr/sei-cosmos/homeworks/Tamagotchi-Mini-Project/images/background-lights-on.webp);
   background-size: cover;
-}
+} */
 
 #nameGrogu {
 display: flex;

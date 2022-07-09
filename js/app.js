@@ -55,11 +55,14 @@ function rejuvenateGrogu () {
 
 //REFBOOT
 let lightSwitchClickCount = 0
+if (lightSwitchClickCount === 0) {document.body.style.backgroundImage = "url('../images/background-lights-on.webp')";
+document.body.style.backgroundSize = 'cover';}
+
 function increaselightSwitchClickCount(){
     lightSwitchClickCount += 1
 if (lightSwitchClickCount % 2 === 0){
     const tireTimer = setInterval(tireGrogu, 5000)
-    document.body.style.backgroundImage = "url('./images/background-lights-on.webp')";
+    document.body.style.backgroundImage = "url('../images/background-lights-on.webp')";
     document.body.style.backgroundSize = 'cover';
     document.body.style.backgroundRepeat = 'no-repeat';
         if (lightSwitchClickCount % 2 != 0){
@@ -67,7 +70,7 @@ if (lightSwitchClickCount % 2 === 0){
         }
 } else if (lightSwitchClickCount % 2 != 0){
     const rejuvenateTimer = setInterval(rejuvenateGrogu, 4000)
-    document.body.style.backgroundImage = "url('./images/background-lights-off.jpeg')";
+    document.body.style.backgroundImage = "url('../images/background-lights-off.jpeg')";
     document.body.style.backgroundSize = 'cover';
     document.body.style.backgroundRepeat = 'no-repeat';
     if (lightSwitchClickCount % 2 === 0){
@@ -164,18 +167,18 @@ function ageGrogu () {
     getAgeNumerator.innerText = `Age = ${babyYoda.age += 1} years`
     }
     if (babyYoda.age === 52){
-        document.getElementById('groguTamagotchi').src='.images/evolve_grogu_and_din.jpg'
+        document.getElementById('groguTamagotchi').src='images/evolve_grogu_and_din.jpg'
         //add something here to change from original image to next image
         //start with grogu in pod, then upgrade to grogu in either chain mail or with din djarin.
         //the alert should follow after the evolution or be at the same time.
         alert(`Tamagrogu has gained a pal.`)
     }
     if (babyYoda.age === 60){
-        document.getElementById('groguTamagotchi').src='.images/grogu_and_din.jpg'
+        document.getElementById('groguTamagotchi').src='../images/grogu_and_din.jpg'
         alert(`Tamagrogu has chosen Din over Luke.`)
     }
     if (babyYoda.age === 65){
-        document.body.style.backgroundImage = 'url(".images/Final-Image.webp")'
+        document.body.style.backgroundImage = 'url("../images/Final-Image.webp")'
         alert('You win!')
     }
 }
