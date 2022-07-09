@@ -61,10 +61,26 @@ margin-top: 130px;
 margin-bottom: 100px;
 margin-left: auto;
 margin-right: auto;
-border: solid 6px #9cbb80;
+animation-duration: 8s;
+animation-name: slide;
+animation-iteration-count: infinite;
+alternate-direction: alternate;
+animation-delay: 0s;
+/* border: solid 6px #9cbb80; */
 /*obtained the above color by googling grogu's skin color hex code and finding it on this website: https://colorswall.com/palette/85592*/
-border-radius: 110px;
+/* border-radius: 110px; */
 /* outline: 1px solid red; */
+}
+
+@keyframes slide{
+  from {
+    center: 100%;
+    width: 630%;
+  }
+  to {
+    center: 100%;
+    width: 100%;
+  }
 }
 
 .container3 {

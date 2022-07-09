@@ -9,7 +9,7 @@ class Tamagotchi {
     }
 }
 
-const babyYoda = new Tamagotchi (`tamagotchiName`, 0, 0, 0, 50)
+const babyYoda = new Tamagotchi (`tamagotchiName`, 1, 1, 1, 50)
 
 //FEED FUNCTIONS
 let getHungerNumerator = document.getElementById('hungerNumerator')
@@ -22,7 +22,7 @@ startHungerNumerator()
 function feedGrogu () {
     if (babyYoda.hunger > 1){
         getHungerNumerator.innerText = `Hunger = ${babyYoda.hunger -= 1}`
-    }
+    } return babyYoda.hunger
 }
 
 //SLEEP FUNCTIONS
@@ -38,14 +38,17 @@ startSleepinessNumerator()
 function tireGrogu () {
     if (babyYoda.sleepiness < 10){
     getSleepinessNumerator.innerText = `Sleepiness = ${babyYoda.sleepiness += 1}`
+    } 
+    if (babyYoda.sleepiness === 10){
+        alert(`Tamagrogu has fainted!`)
     }
 }
 
 //lights on function related to sleep
-function rejuvinateGrogu () {
+function rejuvenateGrogu () {
     if (babyYoda.sleepiness > 1){
     getSleepinessNumerator.innerText = `Sleepiness = ${babyYoda.sleepiness -= 2}`
-    }
+    } return babyYoda.sleepiness
 }
 //the webpage is returning NaN even though teh timer function appears as the same as the timer functions for the others
 //i get undefined when i console.log the line that's directly above
@@ -63,7 +66,7 @@ if (lightSwitchClickCount % 2 === 0){
             clearInterval(tireTimer)
         }
 } else if (lightSwitchClickCount % 2 != 0){
-    const rejuvenateTimer = setInterval(rejuvinateGrogu, 4000)
+    const rejuvenateTimer = setInterval(rejuvenateGrogu, 4000)
     document.body.style.backgroundImage = "url('/images/background-lights-off.jpeg')";
     document.body.style.backgroundSize = 'cover';
     document.body.style.backgroundRepeat = 'no-repeat';
@@ -141,7 +144,7 @@ function startBoredomNumerator() {
 startBoredomNumerator()
 
 function playWithGrogu () {
-    if (babyYoda.boredom < 0){
+    if (babyYoda.boredom > 1){
     getBoredomNumerator.innerText = `Boredom = ${babyYoda.boredom -= 1}`
     }
 }
@@ -158,19 +161,41 @@ getAgeNumerator.innerText = `Age = ${babyYoda.age} years`
 
 function ageGrogu () {
     if (babyYoda.age < 66){
-getAgeNumerator.innerText = `Age = ${babyYoda.age += 1} years`
+    getAgeNumerator.innerText = `Age = ${babyYoda.age += 1} years`
+    }
+    if (babyYoda.age === 52){
+        document.getElementById('groguTamagotchi').src='images/evolve_grogu_and_din.jpg'
+        //add something here to change from original image to next image
+        //start with grogu in pod, then upgrade to grogu in either chain mail or with din djarin.
+        //the alert should follow after the evolution or be at the same time.
+        alert(`Tamagrogu has gained a pal.`)
+    }
+    if (babyYoda.age === 60){
+        document.getElementById('groguTamagotchi').src='images/grogu_and_din.jpg'
+        alert(`Tamagrogu has chosen Din over Luke.`)
+    }
+    if (babyYoda.age === 65){
+        document.body.style.backgroundImage = 'url("images/Final-Image.webp")'
+        alert('You win!')
     }
 }
+
 
 function makeGroguHungry () {
     if (babyYoda.hunger < 10){
     getHungerNumerator.innerText = `Hunger = ${babyYoda.hunger += 1}`
+    } 
+    if(babyYoda.hunger === 10){
+         alert(`Tamagrogu has fainted!`)
     }
 }
 
 function makeGroguBored () {
     if (babyYoda.boredom < 10){
     getBoredomNumerator.innerText = `Boredom = ${babyYoda.boredom += 1}`
+    } 
+    if (babyYoda.boredom === 10){
+        alert(`Tamagrogu has fainted!`)
     }
 }
 
@@ -206,37 +231,15 @@ Grogu is aging and will eventually evolve. You win when Grogu turns 65 years old
     }, 100)
 
 //FAINT FUNCTION
-function faint () {
-if (babyYoda.hunger === 10 || babyYoda.boredom === 10 || babyYoda.sleepiness === 10){
-    alert(`Tamagrogu AKA ${tamagotchiName} has fainted!`)
-    }
-}
+// function faint(num) {
+// if (babyYoda.hunger === num || babyYoda.sleepiness === num || babyYoda.boredom === num){
+//     alert(`Tamagrogu has fainted!`)
+//     }
+// }
 
-faint()
+// faint(10)
 
 //EVOLVE FUNCTIONS
-function evolve1(){
-    if(babyYoda.age === 57){
-        
-    }
-    //add something here to change from original image to next image
-    //start with grogu in pod, then upgrade to grogu in either chain mail or with din djarin.
-    //the alert should follow after the evolution or be at the same time.
-    
-    alert(`Tamagrogu AKA ${tamagotchiName} has gained a pal.`)
-}
-
-function evolve2(){
-    if (babyYoda.age === 62){
-
-    }
-    //add something here to change from original image to next image
-    //start with grogu in pod, then upgrade to grogu in either chain mail or with din djarin.
-    //the alert should follow after the evolution or be at the same time.
-    
-    alert(`Tamagrogu AKA ${tamagotchiName} has gained a pal.`)
-}
-
 //for the lights button, i need to find a way to change the background image to something darker or just change the color to black.
 
 //over time, the values of hunger, sleep and boredom need to decrease at a certain interval so that the player must keep hitting buttons so Grogu doesn't faint
