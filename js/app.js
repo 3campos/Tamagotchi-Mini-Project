@@ -211,9 +211,9 @@ document.getElementById('startButton').addEventListener('click',() => {
     if (tamagotchiName != null) {
     document.getElementById('nameGrogu').innerText = `Tamagrogu AKA ${tamagotchiName}`
         }
-    document.getElementById('groguTamagotchi').src='./images/grogu_tamagotchi.png'
     }
     promptForName()
+    document.getElementById('groguTamagotchi').src='./images/grogu_tamagotchi.png'
     // sleepCountPreLightClick ()
     setInterval(ageGrogu, 5000)
     setInterval(makeGroguHungry, 5000)
