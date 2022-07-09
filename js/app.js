@@ -26,7 +26,9 @@ function startHungerNumerator() {
 startHungerNumerator()
 
 function feedGrogu () {
-    getHungerNumerator.innerText = `Hunger = ${babyYoda.hunger -= 1}`
+    if (babyYoda.hunger > 1){
+        getHungerNumerator.innerText = `Hunger = ${babyYoda.hunger -= 1}`
+    }
 }
 
 //SLEEP FUNCTIONS
@@ -40,14 +42,17 @@ startSleepinessNumerator()
 
 //lights off function related to sleep
 function tireGrogu () {
+    if (babyYoda.sleepiness < 10){
     getSleepinessNumerator.innerText = `Sleepiness = ${babyYoda.sleepiness += 1}`
     }
+}
 
 //lights on function related to sleep
 function rejuvinateGrogu () {
+    if (babyYoda.sleepiness > 1){
     getSleepinessNumerator.innerText = `Sleepiness = ${babyYoda.sleepiness -= 2}`
     }
-
+}
 //the webpage is returning NaN even though teh timer function appears as the same as the timer functions for the others
 //i get undefined when i console.log the line that's directly above
 
@@ -56,17 +61,24 @@ let lightSwitchClickCount = 0
 function increaselightSwitchClickCount(){
     lightSwitchClickCount += 1
 if (lightSwitchClickCount % 2 === 0){
-    setInterval(tireGrogu, 5000)
+    const tireTimer = setInterval(tireGrogu, 5000)
     document.body.style.backgroundImage = "url('/images/background-lights-on.webp')";
     document.body.style.backgroundSize = 'cover';
     document.body.style.backgroundRepeat = 'no-repeat';
+        if (lightSwitchClickCount % 2 != 0){
+            clearInterval(tireTimer)
+        }
 } else if (lightSwitchClickCount % 2 != 0){
-    setInterval(rejuvinateGrogu, 2500)
+    const rejuvenateTimer = setInterval(rejuvinateGrogu, 4000)
     document.body.style.backgroundImage = "url('/images/background-lights-off.jpeg')";
     document.body.style.backgroundSize = 'cover';
     document.body.style.backgroundRepeat = 'no-repeat';
+    if (lightSwitchClickCount % 2 === 0){
+            clearInterval(rejuvenateTimer)
+        }
     }
 }
+
 // function sleepCountPreLightClick () {
 //     if (lightSwitchClickCount === 0){
 //     setInterval(tireGrogu, 5000)
@@ -132,11 +144,12 @@ let getBoredomNumerator = document.getElementById('boredomNumerator')
 function startBoredomNumerator() {
     getBoredomNumerator.innerText = `Boredom = ${babyYoda.boredom}`
 }
-
 startBoredomNumerator()
 
 function playWithGrogu () {
+    if (babyYoda.boredom < 0){
     getBoredomNumerator.innerText = `Boredom = ${babyYoda.boredom -= 1}`
+    }
 }
 
 //INCREASE PET'S AGE EVERY X MINUTES
@@ -150,17 +163,22 @@ let getAgeNumerator = document.getElementById('ageNumerator')
 getAgeNumerator.innerText = `Age = ${babyYoda.age} years`
 
 function ageGrogu () {
+    if (babyYoda.age < 66){
 getAgeNumerator.innerText = `Age = ${babyYoda.age += 1} years`
+    }
 }
 
 function makeGroguHungry () {
+    if (babyYoda.hunger < 10){
     getHungerNumerator.innerText = `Hunger = ${babyYoda.hunger += 1}`
     }
+}
 
 function makeGroguBored () {
+    if (babyYoda.boredom < 10){
     getBoredomNumerator.innerText = `Boredom = ${babyYoda.boredom += 1}`
     }
-
+}
 
 //EVENT LISTENERS FOR BUTTONS
 
@@ -193,6 +211,14 @@ setTimeout(function welcomeIntro(){
 Grogu is aging and will eventually evolve. You win when Grogu turns 65 years old! Click 'START' to begin!`)
     }, 100)
 
+//FAINT FUNCTION
+function faint () {
+if (babyYoda.hunger === 10 || babyYoda.boredom === 10 || babyYoda.sleepiness === 10){
+    alert(`Tamagrogu AKA ${tamagotchiName} has fainted!`)
+    }
+}
+
+faint()
 
 //for the lights button, i need to find a way to change the background image to something darker or just change the color to black.
 
