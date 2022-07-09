@@ -7,12 +7,6 @@ class Tamagotchi {
         this.boredom = boredom
         this.age = age
     }
-    evolve(){
-        //add something here to change from original image to next image
-        //start with grogu in pod, then upgrade to grogu in either chain mail or with din djarin.
-        //the alert should follow after the evolution or be at the same time.
-        alert(`${tamagotchiName} is evolving. He has gained a pal.`)
-    }
 }
 
 const babyYoda = new Tamagotchi (`tamagotchiName`, 0, 0, 0, 50)
@@ -219,6 +213,29 @@ if (babyYoda.hunger === 10 || babyYoda.boredom === 10 || babyYoda.sleepiness ===
 }
 
 faint()
+
+//EVOLVE FUNCTIONS
+function evolve1(){
+    if(babyYoda.age === 57){
+        
+    }
+    //add something here to change from original image to next image
+    //start with grogu in pod, then upgrade to grogu in either chain mail or with din djarin.
+    //the alert should follow after the evolution or be at the same time.
+    
+    alert(`Tamagrogu AKA ${tamagotchiName} has gained a pal.`)
+}
+
+function evolve2(){
+    if (babyYoda.age === 62){
+
+    }
+    //add something here to change from original image to next image
+    //start with grogu in pod, then upgrade to grogu in either chain mail or with din djarin.
+    //the alert should follow after the evolution or be at the same time.
+    
+    alert(`Tamagrogu AKA ${tamagotchiName} has gained a pal.`)
+}
 
 //for the lights button, i need to find a way to change the background image to something darker or just change the color to black.
 
